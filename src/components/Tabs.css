@@ -1,0 +1,45 @@
+@property --op0 {
+  syntax: "<percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+@property --op1 {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+@property --op2 {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+@property --op3 {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+
+.tab-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.tab {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 3px;
+  transition: background-color 0.25s ease;
+}
+.active {
+  background-color: #217dfd;
+  cursor: default;
+}
+.tab:not(.active) {
+  cursor: pointer;
+}

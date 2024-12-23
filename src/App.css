@@ -1,0 +1,53 @@
+@property --mouse-x {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+@property --mouse-y {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at calc(20% + var(--mouse-x)) calc(30% + var(--mouse-y)), rgba(33, 105, 243, 0.5), transparent 30%),
+    radial-gradient(circle at calc(55% + var(--mouse-x)) calc(40% + var(--mouse-y)), rgba(33, 243, 231, 0.4), transparent 40%),
+    radial-gradient(circle at calc(40% + var(--mouse-x)) calc(62% + var(--mouse-y)), rgba(33, 105, 243, 0.6), transparent 40%),
+    radial-gradient(circle at calc(70% + var(--mouse-x)) calc(80% + var(--mouse-y)), rgba(33, 243, 231, 0.4), transparent 40%);
+  background-blend-mode: screen;
+  background-size: cover;
+  filter: blur(60px);
+  transition: --mouse-x 2s ease-out, --mouse-y 2s ease-out;
+  z-index: 0;
+}
+a {
+  color: #217dfd;
+  text-decoration: none;
+}
